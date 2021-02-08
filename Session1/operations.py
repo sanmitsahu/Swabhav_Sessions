@@ -1,0 +1,7 @@
+print(7/2)
+print(7//2)
+print(-7/2)
+print(-7//2)
+print(12**2)
+print(12**0.5)
+print(type(123456678988776555))
