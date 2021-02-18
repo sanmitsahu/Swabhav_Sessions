@@ -1,0 +1,36 @@
+SELECT * FROM `student_address`
+INNER JOIN `student`
+ON `student`.student_id = `student_address`.student_id
+ORDER BY student_name;
+
+SELECT * FROM `customer`
+INNER JOIN `order`
+ON `order`.customer_id = `customer`.customer_id
+INNER JOIN `order_items`
+ON `order`.order_id = `order_items`.order_id ;
+
+SELECT * FROM `customer`
+INNER JOIN `order`
+ON `order`.customer_id = `customer`.customer_id
+INNER JOIN `order_items`
+ON `order`.order_id = `order_items`.order_id
+order BY `customer`.customer_id;
+
+SELECT * FROM `employee`
+INNER JOIN `department`
+ON `department`.dno = `employee`.dno
+GROUP BY dname
+order BY ename;
+
+SELECT Language,isOfficial,Percentage FROM `countrylanguage`
+INNER JOIN `country`
+ON `countrylanguage`.CountryCode = `Country`.Code
+WHERE `Country`.Name="India"
+ORDER BY `countrylanguage`.Language;
+
+SELECT `actor`.name,`actor`.gender,`actor`.age, `movies`.ratings , `movies`.genre , `movies`.`release-date`  FROM `actor`
+INNER JOIN `movie_actor_mapping`
+ON `actor`.id = `movie_actor_mapping`.`actor-id`
+INNER JOIN `movies`
+ON `movies`.id = `movie_actor_mapping`.`movie-id`
+ORDER BY `actor`.name;
