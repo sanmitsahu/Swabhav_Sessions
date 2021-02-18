@@ -181,16 +181,17 @@ def delete_contacts(del_no):
 			print("No such record found")
 			return
 		else:
-			Query1 = f"""DELETE FROM `contact2` WHERE `Contact_no`={contact_delete}"""
-			cursor.execute(Query1)
-			con.commit()
 			Query2 = f"""DELETE FROM `address_contact2` WHERE `Contact_no`={contact_delete}"""
 			cursor.execute(Query2)
 			con.commit()
+			Query1 = f"""DELETE FROM `contact2` WHERE `Contact_no`={contact_delete}"""
+			cursor.execute(Query1)
+			con.commit()
+			
 
 	except Exception as e:
 		con.rollback()
-		print("Error occured ! Record not deleted")
+		print("Error occured ! Record not deleted",e)
 		print()
 		return
 		
